@@ -14,6 +14,7 @@ func main(){
 
 	r.GET("/v1login", v1login)
 	r.GET("/v2login", v2login)
+	r.GET("/v3login", v3login)
 
 
 	err := r.Run(":8000")
@@ -35,6 +36,13 @@ func v1login(c *gin.Context) {
 func v2login(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"msg": "v2 login",
+	})
+	return
+}
+
+func v3login(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"msg": "v3 login",
 	})
 	return
 }
