@@ -48,3 +48,9 @@ func v3login(c *gin.Context) {
 }
 
 
+func v4login(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"msg": "v4 login",
+	})
+	return
+}
