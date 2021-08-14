@@ -2,7 +2,8 @@ package main
 
 import (
 "fmt"
-"github.com/gin-gonic/gin"
+	"gin-demo1/api"
+	"github.com/gin-gonic/gin"
 
 )
 
@@ -12,10 +13,12 @@ func main(){
 	r.Use(gin.Recovery())
 
 
-	r.GET("/v1login", v1login)
-	r.GET("/v2login", v2login)
-	r.GET("/v3login", v3login)
+	r.GET("/v1login", api.V1login)
+	r.GET("/v2login", api.V2login)
 
+
+	r.POST("/part",api.CreatePart)
+	r.POST("/importExcel",api.ReadExcel)
 
 	err := r.Run(":8000")
 	if err != nil {
@@ -26,31 +29,4 @@ func main(){
 
 
 
-func v1login(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"msg": "v1 login",
-	})
-	return
-}
 
-func v2login(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"msg": "v2 login",
-	})
-	return
-}
-
-func v3login(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"msg": "v3 login",
-	})
-	return
-}
-
-
-func v4login(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"msg": "v4 login",
-	})
-	return
-}

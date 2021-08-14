@@ -1,2 +1,7 @@
 ### gin-demo
-Just a test demo
+
+Just a Common Example For Gin
+
+
+
+
